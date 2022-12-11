@@ -170,9 +170,11 @@ const addTargetBlank = () => {
 
 const checkIfUserIsOnHomePage = () => {
     const url = window.location.href;
+    // url after queryparams removed
+    const urlWithoutQueryParams = url.split("?")[0];
     const hackerNewsUrls = ["https://news.ycombinator.com/", "https://news.ycombinator.com/news"]
 
-    if (hackerNewsUrls.includes(url)) {
+    if (hackerNewsUrls.includes(urlWithoutQueryParams)) {
         addSortButtons();
     }
 }
